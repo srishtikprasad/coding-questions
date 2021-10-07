@@ -1,0 +1,21 @@
+int chocolates(int a[], int n)
+{
+    // Complete the function
+    //subproblem where two people choose optimally ,here we have one person 
+    //choosing optimally,if two person were choosing optimally then dp or other would have been used
+
+
+	//here we used two pointer approach
+    int i=0,j=n-1;
+    if(n==1)
+        return a[0];
+    while(i<j)
+    {
+       if(a[i]>a[j])
+            i++;
+       else
+            j--;
+        if(i==j)
+            return a[i];
+    }
+    
