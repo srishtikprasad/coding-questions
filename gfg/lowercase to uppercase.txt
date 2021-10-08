@@ -1,0 +1,21 @@
+/* ascii value of 'A'=1000001 and 'a'=1100001
+
+so 'A'|(1<<5)=1100001-->a
+
+hence converted
+
+*/
+
+class Solution {
+  public:
+    string toLower(string str) {
+        // code here
+        for(int i=0;i<str.size();i++)
+        {
+            str[i]=str[i]|(1<<5);
+        }
+        return str;
+        
+    }
+};
+

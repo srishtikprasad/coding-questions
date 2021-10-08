@@ -1,0 +1,39 @@
+
+
+  string printMinIndexChar(string str, string patt)
+	{
+	   
+	    int min_idx=INT_MAX;
+	    string ans;
+	    int m=str.size();
+	    int n=patt.size();
+	    unordered_map<char,int>hash;
+	    //store first char of str in map
+	    for(int i=0;i<m;i++)
+	    {
+	       if(hash.find(str[i])==hash.end())
+	            hash[str[i]]=i;
+	    }
+
+	    //traverse the string patt
+
+	    for(int i=0;i<n;i++)
+	    {
+	        if(hash.find(patt[i])!=hash.end() && hash[patt[i]]<min_idx)
+	            min_idx=hash[patt[i]];
+	    }
+
+	    //string ans variable is initialised becoz we need to return string and 
+	    //not character i.e.str[min_idx]--> is wrong ,coz its a character 
+
+	    if(min_idx!=INT_MAX)
+	        {
+	            ans=str[min_idx];
+	            return ans;
+	        }
+	        
+	      
+	    else
+	        return "$";
+	    
+	}

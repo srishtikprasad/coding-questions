@@ -1,0 +1,12 @@
+//this stl function takes o(n) time complexity
+
+class Solution{
+    public:
+        long long find_multiplication(int a[], int b[], int n, int m)
+    {
+        // Complete the function
+        int x=*max_element(a,a+n);
+        int y=*min_element(b,b+m);
+        return x*y;
+    }
+};

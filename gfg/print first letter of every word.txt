@@ -1,0 +1,23 @@
+string firstAlphabet(string str)
+	{
+	    // Your code goes here
+	    string ans="" ;
+	    bool flag =true;
+	   
+	    for(int i=0;i<str.length();i++)
+	    {
+	       
+	        if(str[i]==' ')
+	            flag=true;
+	        if(str[i]!=' '&&flag==true)
+	            {
+	                ans.push_back(str[i]);
+	                flag=false;      
+	            }    
+	    }
+	    return ans;
+	}
+/*
+I/P==//geeks for geeks//
+O/P==//gfg//
+*/
