@@ -1,0 +1,22 @@
+class Solution{
+public:	
+	//remove duplicates without changing the order of string	
+	
+	string removeDups(string str) 
+	{
+	    // Your code goes here
+	    unordered_map<char,int>mp;
+	    string ans="";
+	    for(int i=0;i<str.length();i++)
+	    {
+	        if(mp.find(str[i])==mp.end()) //this statement checks if key st[i] is not present in map
+	       {
+	            mp[str[i]]=i;
+	            ans.push_back(str[i]);//since condtion goes inside this if stat.hence that was previously not present in map
+	       } 
+	           
+	    }
+	    
+	    return ans;
+	}
+};

@@ -1,0 +1,29 @@
+/*
+Given two strings string1 and string2, remove those characters from first string(string1) which
+ are present in second string(string2). Both the strings are different and contain only lowercase characters.
+string1 = "computer"
+string2 = "cat"
+Output: "ompuer"
+Explanation: After removing characters(c, a, t)
+from string1 we get "ompuer".
+
+*/
+
+//find(string1.begin(),string1.end(),x)-->this is iterator corresponding to x in string1
+
+class Solution {
+  public:
+    string removeChars(string string1, string string2) {
+        // code here
+        for(auto x:string2)
+        {
+            while(find(string1.begin(),string1.end(),x)!=string1.end())
+                {
+                    auto it=find(string1.begin(),string1.end(),x);
+                    string1.erase(it);
+                }
+        }
+        return string1;
+        
+    }
+};
