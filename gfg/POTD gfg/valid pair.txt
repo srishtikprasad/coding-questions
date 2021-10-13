@@ -1,0 +1,31 @@
+/*
+brute force approach-->O(N^2)
+using two pointer approach
+time comp-->O(NLogN)
+
+*/
+
+class Solution{
+    
+    public:
+    long long ValidPair(int a[], int n) 
+    { 
+    	// Your code goes here
+    	sort(a,a+n);
+    	long long int cnt=0;
+    	int l=0,h=n-1;
+    	while(l<h)
+    	{
+    	    if(a[l]+a[h]>0)
+    	    {
+    	        cnt=cnt+(h-l);
+    	        h--;
+    	    }
+    	    else 
+    	        l++;
+    	        
+    	}
+    	return cnt;
+    	
+    }   
+};

@@ -1,0 +1,28 @@
+vector<string> encode(string word)
+{
+    unordered_map<char,int>mp;
+    int i=0;
+    vector<string>res;
+    //string res="";
+    for(char ch:word)
+    {
+        if(mp.find(ch)==mp.end())
+            mp[ch]=i++;
+            
+        res.push_back(to_string(mp[ch]));
+    }
+    return res;
+}
+vector<string> findMatchedWords(vector<string> dict,string pattern)
+{
+       //Your code here
+       vector<string>ans;
+       int len=pattern.length();
+       vector<string> hash=encode(pattern);
+       for(string x:dict)
+       {
+           if(x.length()==len && hash==encode(x))  //hash and encode are two vector of string and we are compraing wheather they are same or not
+            ans.push_back(x);
+       }
+       return ans;
+}
