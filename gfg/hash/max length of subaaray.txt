@@ -1,0 +1,28 @@
+ int maxLen(vector<int>&arr, int n)
+    {   
+        // Your code here
+        unordered_map<int,int>mp;//store sum and index 
+        int sum=0;
+        int max_len=0;
+        for(int i=0;i<n;i++)
+        {
+            // mp[arr[0]]=0;
+            sum+=arr[i];
+            if(arr[i]==0 && max_len==0)//edge case
+                max_len=1;
+            if(sum==0) //since initially the sum was 0 and again if sum is 0 then whole from stating to tillnow is part of subarray-->i+1 ...+1 is for 0 index  
+                max_len=i+1;
+            if(mp.find(sum)!=mp.end()) //if present in the map then this
+                {
+                    max_len=max(max_len,i-mp[sum]);
+             
+                }
+            else
+            {
+                mp[sum]=i;
+            }
+        }
+        return max_len;
+        
+        
+    }

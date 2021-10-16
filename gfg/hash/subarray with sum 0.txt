@@ -13,7 +13,7 @@ class Solution{
         for(int i=0;i<n;i++)
         {
             sum+=arr[i];
-            if(sum==0 ||sumset.find(sum)!=sumset.end())
+            if(sum==0 ||sumset.find(sum)!=sumset.end()) //sort of synatx to find if that sum is present in the unordered set .
                 return true;
             sumset.insert(sum);
         }
